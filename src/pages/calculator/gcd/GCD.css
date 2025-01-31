@@ -1,0 +1,11 @@
+.gcd-content
+{
+    min-width:300px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+

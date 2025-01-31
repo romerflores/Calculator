@@ -1,0 +1,15 @@
+
+
+.calculator-content
+{
+    width: auto;
+    max-width: 1000px;
+    min-width: 60%;
+    height: auto;
+    min-height: 500px;
+    border: 2px solid var(--wine);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    overflow: hidden;
+}

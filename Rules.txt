@@ -1,0 +1,3 @@
+Los nombre de componentes estaran en Pascal Case --> RomerFlores  Titulo
+
+los nombre de variables estaran en camelCaes --> contadorRegla romerFlores

@@ -1,0 +1,31 @@
+
+
+
+.inputRow
+{
+
+    width: auto;
+    min-width: 100px;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+.inputRow input
+{
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.inputRow label
+{
+    width: 100px;
+    overflow: hidden;
+}
