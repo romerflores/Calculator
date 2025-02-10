@@ -5,7 +5,7 @@ function TODO()
 {
     return (
         <> 
-            <Title textTitle="Aun estamos trabajando... vuelve despues" textColor="var(--withe)" textSize="30"></Title>
+            <Title textTitle="Aun estamos trabajando... vuelve despues" textColor="black" textSize="30"></Title>
         </>
     )
 }

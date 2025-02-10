@@ -15,7 +15,7 @@ function Header() {
 
     const textBanner = [
         "Cristiano ronaldo gano 34 copas en toda su carrera",
-        "Messi fracaso en el 2014 pero conquisto el mundo en el 2016",
+        "Messi fracaso en el 2014 pero conquisto el mundo en el 2022",
         "El perrito kesi kesi de los memes te desea un feliz aprendizaje"
     ][Math.floor(Math.random() * 10) % 3];
 
@@ -45,10 +45,10 @@ function Header() {
             </section>
             <section className="container-navbar">
                 <nav className="navbar container">
-                    <a href="#" className="navbar__logo">
+                    <Link to="home" className="navbar__logo">
                         <img src={el_bicho} alt="Logo el bicho siuuuu" />
                         <span>Romer's Page</span>
-                    </a>
+                    </Link>
                     <div className="navbar__nav">
                         <ul className="nav__list">
                             <li className="nav__link">
@@ -70,16 +70,16 @@ function Header() {
                         <div className={`navbar__mobile-menu ${isMenuOpen ? "open" : ""}`}>
                             <ul className="nav__list-mobile">
                                 <li className="nav__link-mobile">
-                                    <Link to="/criptografia">Criptografía</Link>
+                                    <Link to="/criptografia" onClick={toggleMenu}>Criptografía</Link>
                                 </li>
                                 <li className="nav__link-mobile">
-                                    <Link to="/primos">Primos</Link>
+                                    <Link to="/primos" onClick={toggleMenu}>Primos</Link>
                                 </li>
                                 <li className="nav__link-mobile">
-                                    <Link to="/calculadora">Calculadora</Link>
+                                    <Link to="/calculadora" onClick={toggleMenu}>Calculadora</Link>
                                 </li>
                                 <li className="nav__link-mobile">
-                                    <Link to="/aprende">Aprende</Link>
+                                    <Link to="/aprende" onClick={toggleMenu}>Aprende</Link>
                                 </li>
                             </ul>
                         </div>

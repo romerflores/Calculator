@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css"
 import NotFound from "./templates/notFound/NotFound";
 import TODO from "./components/TODO/TODO";
+import Home from "./pages/home/Home";
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
                 <Route path="/primos" element={<TODO></TODO>} />
                 <Route path="/criptografia" element={<TODO></TODO>} />
                 <Route path="/aprende" element={<TODO></TODO>} />
+                <Route path="/home" element={<Home/>} />
+                <Route path="/" element={<Home/>} />
                 <Route path="*" element={<NotFound/>} />
                 
             </Routes>

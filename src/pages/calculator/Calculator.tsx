@@ -33,7 +33,7 @@ function Calculator()
 
     return (
         <>
-            <Title textTitle={"Calculadora de numero Grandes"} textColor="var(--withe)" textSize="30"></Title>
+            <Title textTitle={"Calculadora de numero Grandes"} textColor="black" textSize="30"></Title>
             <section className="calculator-content">
                 <ul onClick={()=> console.log("hizo click")}>
                     {optionsCalculator.map(elemento =>

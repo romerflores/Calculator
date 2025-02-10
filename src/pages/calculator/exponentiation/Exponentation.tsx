@@ -6,6 +6,7 @@ import Input from "../../../components/input/Input"
 import { useState } from "react"
 
 import "../gcd/GCD.css"
+import Title from "../../../components/title/Title"
 
 /**
  * TODO
@@ -124,7 +125,7 @@ function Exponentiation() {
 
     return (
         <section className="gcd-content">
-            <h2>Exponenciacion (BinaryPow)</h2>
+            <Title textTitle="Exponenciacion binaria" textColor="black" textSize="25"></Title>
             <Input
                 name="numberA"
                 typeInput="string"

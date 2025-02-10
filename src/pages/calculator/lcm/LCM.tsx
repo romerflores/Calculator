@@ -6,6 +6,7 @@ import Input from "../../../components/input/Input"
 import { useState } from "react"
 
 import "../gcd/GCD.css"
+import Title from "../../../components/title/Title"
 
 
 
@@ -64,6 +65,7 @@ function LCM() {
         }));
     };
 
+
     const [gcdResult, setLcmResult] = useState("")
 
     const [messageResult, setMessageResult] = useState("")
@@ -105,7 +107,7 @@ function LCM() {
 
     return (
         <section className="gcd-content">
-            <h2>Minimo Comun Multiplo</h2>
+            <Title textTitle="Minimo comun multiplo" textColor="black" textSize="25"></Title>
             <Input
                 name="numberA"
                 typeInput="string"

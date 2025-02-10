@@ -6,6 +6,7 @@ import BoxMessage from "../../../components/boxMessage/BoxMessage"
 import { useState } from "react"
 
 import "./GCD.css"
+import Title from "../../../components/title/Title"
 
 
 const st = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]);
@@ -104,7 +105,7 @@ function GCD() {
     return (
 
         <section className="gcd-content">
-            <h2>Maximo Comun Divisior</h2>
+            <Title textTitle="Maximo comun divisor" textColor="black" textSize="25"></Title>
             <Input
                 name="numberA"
                 typeInput="string"
