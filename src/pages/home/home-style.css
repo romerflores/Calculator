@@ -18,6 +18,7 @@
     opacity: 0;
     transform: scaleY(1.1); /* Inicia ligeramente ampliada */
     animation: fadeInBackground 1s ease-out forwards;
+    z-index: -2;
 }
 
 /* Definimos la animación */

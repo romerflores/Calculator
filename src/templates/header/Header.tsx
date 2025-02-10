@@ -47,7 +47,7 @@ function Header() {
             </section>
             <section className="container-navbar">
                 <nav className="navbar container">
-                    <Link to="home" className="navbar__logo">
+                    <Link to="/home" className="navbar__logo">
                         <img src={el_bicho} alt="Logo el bicho siuuuu" />
                         <span>Romer's Page</span>
                     </Link>
