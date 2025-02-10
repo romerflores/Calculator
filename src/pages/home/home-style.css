@@ -1,6 +1,6 @@
 .homepage-container
 {
-    background-image: url(../../../public/images/bicho.webp);
+    background-image: url(../../../public/images/cristiano.webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -16,7 +16,7 @@
 
     /* Animación de entrada */
     opacity: 0;
-    transform: translateX(-500px); /* Inicia ligeramente ampliada */
+    transform: scaleY(1.1); /* Inicia ligeramente ampliada */
     animation: fadeInBackground 1s ease-out forwards;
 }
 
@@ -24,11 +24,11 @@
 @keyframes fadeInBackground {
     from {
         opacity: 0;
-        transform: translateX(-100px); /* Más grande al inicio */
+        transform: scaleY(1.2); /* Más grande al inicio */
     }
     to {
         opacity: 1;
-        transform: translateX(0px); /* Vuelve a su tamaño normal */
+        transform: scaleY(1); /* Vuelve a su tamaño normal */
     }
 }
 .card-home

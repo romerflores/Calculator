@@ -35,7 +35,7 @@ function Calculator()
         <>
             <Title textTitle={"Calculadora de numero Grandes"} textColor="black" textSize="30"></Title>
             <section className="calculator-content">
-                <ul onClick={()=> console.log("hizo click")}>
+                <ul>
                     {optionsCalculator.map(elemento =>
                         <Button key={elemento} type={(activeComponent==elemento)? "selected":"toSelect"} textButton={elemento} onClick={()=> changeActiveComponent(elemento)} />
                     )}

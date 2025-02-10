@@ -11,7 +11,7 @@ interface titleProps {
 
 
 function Title(props: titleProps) {
-    const { textTitle, textColor = "Black", textSize = "10", textAlign_ = "center" ,textBorder="solid 0px withe"} = props
+    const { textTitle, textColor = "Black", textSize = "10", textAlign_ = "center" ,textBorder="solid 0px white"} = props
     return (
         <h2 className="title" style={{ fontSize: `${textSize}px`, color: textColor, textAlign:textAlign_ as React.CSSProperties["textAlign"],WebkitTextStroke:textBorder}}>
             {textTitle}

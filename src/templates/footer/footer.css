@@ -14,7 +14,7 @@
     align-items: center;
     flex-wrap: wrap;
     background-color: var(--wine);
-    color: var(--withe);
+    color: var(--white);
     font-family: "Poppins", serif;
 
     z-index: -1;
@@ -62,7 +62,7 @@
     height: auto;
     width: auto;
     margin: 2px;
-    /* border: var(--withe) solid 1px; */
+    /* border: var(--white) solid 1px; */
 }
 
 .redes__item {
@@ -79,7 +79,7 @@
 .lista__item h3 {
     font-family: "Poppins", serif;
     font-weight: 500;
-    color: var(--withe);
+    color: var(--white);
 }
 
 .lista__item ul {
@@ -94,7 +94,7 @@
 
 .lista__item__link {
     text-decoration: none;
-    color: var(--withe);
+    color: var(--white);
 }
 
 .lista__item__link:active
@@ -113,7 +113,7 @@
 {
     font-family: "Poppins", serif;
     font-weight: 300;
-    color: var(--withe);
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -131,5 +131,5 @@
     margin-top: 10px;
     width: 95%;
     height: 1px;
-    color: var(--withe);
+    color: var(--white);
 }
