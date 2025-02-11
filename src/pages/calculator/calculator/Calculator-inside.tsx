@@ -20,17 +20,6 @@ const st = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]);
 let contAdmiration = 0;
 
 
-function binpow(b: bigint, e: bigint): bigint {
-    if (e <= 0n) return 1n;
-
-    let pot = binpow(b, e / 2n);
-    pot *= pot;
-
-    if (e & 1n) pot *= b;
-
-    return pot;
-}
-
 
 function generateAdmiration(): string {
     let ans = ""
@@ -48,7 +37,12 @@ function generateAdmiration(): string {
 }
 
 function validateStringIsBigInteger(cad: string): boolean {
-    for (let i = 0; i < cad.length; i++) {
+    let ini=0;
+    if(cad.length>0)
+    {
+        if(cad[0]=='-' || cad[0]=="+")ini++;
+    }
+    for (let i = ini; i < cad.length; i++) {
         if (!st.has(cad[i])) {
             return false;
         }
@@ -58,7 +52,7 @@ function validateStringIsBigInteger(cad: string): boolean {
 
 
 
-function Exponentiation() {
+function CalculatorInside() {
     const [numbers, setNumbers] = useState({
         numberA: "",
         numberB: ""
@@ -72,29 +66,47 @@ function Exponentiation() {
         }));
     };
 
-    const [expoResult, setExpoResult] = useState("")
+    const [operationResult, setOperationResult] = useState("")
 
     const [messageResult, setMessageResult] = useState("")
 
     const [messageBoxType, setMessageBoxType] = useState("none")
 
-    const handleCalculteGcd = () => {
+    const handleCalculteOperation = () => {
 
         const a = numbers.numberA.toString();
         const b = numbers.numberB.toString();
 
         if (!(validateStringIsBigInteger(a) && validateStringIsBigInteger(b)) || a.length == 0 || b.length == 0) {
-            setExpoResult("...");
+            setOperationResult("...");
             setMessageResult("Ingrese numeros validos" + generateAdmiration())
             setMessageBoxType("warning")
         }
         else {
             const aBigInt = BigInt(a);
             const bBigInt = BigInt(b);
-            let ans;
+            let ans=0n;
             try {
-                ans = binpow(aBigInt, bBigInt)
-                setExpoResult(ans.toString());
+                switch (activeOperation) {
+                case "suma":
+                    ans=aBigInt+bBigInt;
+                    break;
+                case "resta":
+                    ans=aBigInt-bBigInt;
+                    break;
+                case "multiplicacion":
+                    ans=aBigInt*bBigInt;
+                    break;
+                case "division":
+                    ans=aBigInt/bBigInt;
+                    break;
+                case "modulo":
+                    ans=aBigInt%bBigInt;
+                    break
+                default:
+                    break;
+                }
+                setOperationResult(ans.toString());
 
                 setMessageResult("😎")
                 setMessageBoxType("okay")
@@ -103,7 +115,7 @@ function Exponentiation() {
                 console.error("El numero es mas grande que las moleculas en el universo")
                 ans = 0n
 
-                setExpoResult("INF");
+                setOperationResult("INF");
                 setMessageResult("El numero es tan grande que supera la contidad de moleculas en el universo :0"+generateAdmiration())
                 setMessageBoxType("error")
             }
@@ -118,38 +130,59 @@ function Exponentiation() {
      */
     const handleClear = () => {
         setNumbers({ numberA: "", numberB: "" });
-        setExpoResult("")
+        setOperationResult("")
         setMessageResult("")
         setMessageBoxType("none")
     };
 
+
+
+    const [activeOperation, changeActiveOperation]=useState("suma");
+
     return (
         <section className="gcd-content">
-            <Title textTitle="Exponenciacion binaria" textColor="black" textSize="25"></Title>
+            <Title textTitle="Calculadora (Soporta numeros grandes)" textColor="black" textSize="25"></Title>
             <Input
                 name="numberA"
-                placeholderInput="Base"
-                textInput="Base"
+                placeholderInput="Numero A"
+                textInput="Numero A"
                 value={numbers.numberA}
                 onChange={handleInputChange}
+
+                padding="10px"
+
+                style_={{height:"100px",width:"300px"}}
             />
             <Input
                 name="numberB"
-                placeholderInput="Exponente"
-                textInput="Exponente"
+                placeholderInput="Numero B"
+                textInput="Numero B"
                 value={numbers.numberB}
                 onChange={handleInputChange}
+                padding="10px"
+
+                style_={{height:"100px",width:"300px"}}
             />
+
             <div>
-                <Button textButton="Calcular" type="okay" onClick={handleCalculteGcd}></Button>
+                <Button textButton="Sumar +" type={`${activeOperation=="suma"?"selected":"toSelect"}`} onClick={()=>changeActiveOperation("suma")}></Button>
+                <Button textButton="Restar -" type={`${activeOperation=="resta"?"selected":"toSelect"}` } onClick={()=>changeActiveOperation("resta")}></Button>
+                <Button textButton="Multiplicar *" type={`${activeOperation=="multiplicacion"?"selected":"toSelect"}`}  onClick={()=>changeActiveOperation("multiplicacion")}></Button>
+                <Button textButton="Dividir /" type={`${activeOperation=="division"?"selected":"toSelect"}`} onClick={()=>changeActiveOperation("division")}></Button>
+                <Button textButton="Modulo %" type={`${activeOperation=="modulo"?"selected":"toSelect"}`} onClick={()=>changeActiveOperation("modulo")}></Button>
+
+            </div>
+
+            <div>
+                <Button textButton="Calcular" type="okay" onClick={handleCalculteOperation}></Button>
                 <Button textButton="Limpiar" type="submit" onClick={handleClear} />
             </div>
             <BoxMessage
                 type={messageBoxType}
-                textMessage={`El resultado es ${expoResult.toString()}\n${messageResult}`}>
+                textMessage={`El resultado es ${operationResult.toString()}\n${messageResult}`}>
             </BoxMessage>
         </section>
 
     )
 }
-export default Exponentiation
+export default CalculatorInside

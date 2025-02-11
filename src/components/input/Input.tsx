@@ -1,3 +1,4 @@
+import { CSSProperties } from "react";
 import "./Input.css"
 
 
@@ -5,10 +6,13 @@ interface inputProps
 {
     textInput:string;
     placeholderInput?:string;
-    typeInput:string;
+                         //un text area no tiene un typeinput
     name:string;
     value:string;
-    onChange:(event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange:(event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+    padding?:string
+    
+    style_?:CSSProperties  ///ojo se debe mandar como objeto
 
 }
 
@@ -17,14 +21,14 @@ function Input(props:inputProps)
 
 
 
-    const {textInput,placeholderInput="",typeInput="number",name,value="",onChange}=props
+    const {textInput,placeholderInput="",name,value="",onChange,padding="0px",style_={}}=props
 
 
 
     return (
-        <div className="inputRow">
+        <div className="inputRow" style={{padding:padding}}>
             <label>{textInput}</label>
-            <input type={typeInput} placeholder={placeholderInput} value={value} onChange={onChange} name={name}/>
+            <textarea  placeholder={placeholderInput} value={value} onChange={onChange} name={name} style={style_}/>
         </div>
 
 

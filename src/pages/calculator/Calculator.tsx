@@ -5,6 +5,8 @@ import GCD from "./gcd/GCD"
 import LCM from "./lcm/LCM"
 import Exponentiation from "./exponentiation/Exponentation"
 import { useState } from "react"
+import NotFound from "../../templates/notFound/NotFound"
+import CalculatorInside from "./calculator/Calculator-inside"
 
 function Calculator()
 {
@@ -25,8 +27,10 @@ function Calculator()
             return <LCM/>
         case "Exponenciacion":
             return <Exponentiation/>
+        case "Calculadora":
+            return <CalculatorInside></CalculatorInside>
         default:
-            return <div>Vaya... parece que aun no hay nada aqui...\n por que no vuelves despues?</div>;
+            return <NotFound></NotFound>;
         }
     };
 

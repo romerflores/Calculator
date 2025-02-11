@@ -14,7 +14,7 @@ interface boxMessageProps
 
 function BoxMessage(props:boxMessageProps)
 {
-    const {textMessage,type}=props
+    const {textMessage,type}=props //type :
 
 
     return <div className={`boxMessage ${type}`}>

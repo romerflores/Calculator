@@ -50,7 +50,7 @@ function GCD() {
         numberB: ""
     });
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>)  => {
         const { name, value } = event.target;
         setNumbers((prevValues) => ({
             ...prevValues,
@@ -108,7 +108,6 @@ function GCD() {
             <Title textTitle="Maximo comun divisor" textColor="black" textSize="25"></Title>
             <Input
                 name="numberA"
-                typeInput="string"
                 placeholderInput="Numero A"
                 textInput="Numero A"
                 value={numbers.numberA}
@@ -116,7 +115,6 @@ function GCD() {
             />
             <Input
                 name="numberB"
-                typeInput="string"
                 placeholderInput="Numero B"
                 textInput="Numero B"
                 value={numbers.numberB}
