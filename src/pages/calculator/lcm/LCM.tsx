@@ -114,6 +114,7 @@ function LCM() {
                 textInput="Numero A"
                 value={numbers.numberA}
                 onChange={handleInputChange}
+                padding="10px"
             />
             <Input
                 name="numberB"
@@ -121,6 +122,7 @@ function LCM() {
                 textInput="Numero B"
                 value={numbers.numberB}
                 onChange={handleInputChange}
+                padding="10px"
             />
             <div>
                 <Button textButton="Calcular" type="okay" onClick={handleCalculteGcd}></Button>

@@ -17,13 +17,16 @@
 }
 
 
-.inputRow input
+.inputRow textarea
 {
-    height: 40px;
+    height: auto;
+    min-height: 50px;
     border: none;
-    border-radius: 10px;
-    padding-left: 10px;
-    overflow-wrap: normal;
+    border-radius: 5px;
+    padding: 10px;
+    resize: vertical;
+    overflow: auto;
+    resize: vertical;
 }
 
 .inputRow label

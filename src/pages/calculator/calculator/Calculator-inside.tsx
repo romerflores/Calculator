@@ -151,7 +151,7 @@ function CalculatorInside() {
 
                 padding="10px"
 
-                style_={{height:"100px",width:"300px"}}
+                style_={{height:"100px",width:"200px",maxHeight:"300px",maxWidth:"400px"}}
             />
             <Input
                 name="numberB"
@@ -161,10 +161,10 @@ function CalculatorInside() {
                 onChange={handleInputChange}
                 padding="10px"
 
-                style_={{height:"100px",width:"300px"}}
+                style_={{height:"100px",width:"200px",maxHeight:"300px",maxWidth:"400px"}}
             />
 
-            <div>
+            <div style={{display:"flex",justifyContent:"center",flexWrap:"wrap",margin:"10px"}}>
                 <Button textButton="Sumar +" type={`${activeOperation=="suma"?"selected":"toSelect"}`} onClick={()=>changeActiveOperation("suma")}></Button>
                 <Button textButton="Restar -" type={`${activeOperation=="resta"?"selected":"toSelect"}` } onClick={()=>changeActiveOperation("resta")}></Button>
                 <Button textButton="Multiplicar *" type={`${activeOperation=="multiplicacion"?"selected":"toSelect"}`}  onClick={()=>changeActiveOperation("multiplicacion")}></Button>

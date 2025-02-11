@@ -132,6 +132,9 @@ function Exponentiation() {
                 textInput="Base"
                 value={numbers.numberA}
                 onChange={handleInputChange}
+                padding="10px"
+
+                style_={{width:"200px",maxHeight:"300px",maxWidth:"200px"}}
             />
             <Input
                 name="numberB"
@@ -139,6 +142,9 @@ function Exponentiation() {
                 textInput="Exponente"
                 value={numbers.numberB}
                 onChange={handleInputChange}
+                padding="10px"
+
+                style_={{width:"200px",maxHeight:"300px",maxWidth:"200px"}}
             />
             <div>
                 <Button textButton="Calcular" type="okay" onClick={handleCalculteGcd}></Button>

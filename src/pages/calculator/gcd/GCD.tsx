@@ -112,6 +112,7 @@ function GCD() {
                 textInput="Numero A"
                 value={numbers.numberA}
                 onChange={handleInputChange}
+                padding="10px"
             />
             <Input
                 name="numberB"
@@ -119,6 +120,7 @@ function GCD() {
                 textInput="Numero B"
                 value={numbers.numberB}
                 onChange={handleInputChange}
+                padding="10px"
             />
             <div>
                 <Button textButton="Calcular" type="okay" onClick={handleCalculteGcd}></Button>
