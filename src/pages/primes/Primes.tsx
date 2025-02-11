@@ -3,6 +3,7 @@ import Button from "../../components/button"
 import Title from "../../components/title/Title"
 import "./primes.css"
 import NotFound from "../../templates/notFound/NotFound";
+import IsPrime from "./isprime/IsPrime";
 
 function Primes() {
 
@@ -13,9 +14,9 @@ function Primes() {
     const renderPrimerContent = () => {
         switch (activePrimeContent) {
         case "n-simo":
-            return "nsesimo"
+            return "Esta funcion estara disponible dentro de un par de semanas"
         case "isprime":
-            return "esprimo"
+            return <IsPrime></IsPrime>
         case "test":
             return "teset"
 
@@ -42,6 +43,7 @@ function Primes() {
                 <Button textButton="Criba de Eratostenes" type={("criba" == activePrimeContent ? "warning" : "danger")} onClick={() => setActivePrimeContent("criba")}></Button>
                 <Button textButton="Factorizacion" type={("facto" == activePrimeContent ? "warning" : "danger")} onClick={() => setActivePrimeContent("facto")}></Button>
             </nav>
+            
 
 
             <section className="primes-container-content">
