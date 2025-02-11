@@ -5,7 +5,7 @@ import "./header.css";
 
 
 
-import { Link} from "react-router";
+import { Link } from "react-router";
 
 function Header() {
     // Estado para controlar si el menú está abierto o cerrado
@@ -70,20 +70,19 @@ function Header() {
                             <img src={menuImage} alt="Menú desplegar" />
                         </button>
                         <div className={`navbar__mobile-menu ${isMenuOpen ? "open" : ""}`}>
-                            <ul className="nav__list-mobile">
-                                <li className="nav__link-mobile">
-                                    <Link to="/criptografia" onClick={toggleMenu}>Criptografía</Link>
-                                </li>
-                                <li className="nav__link-mobile">
-                                    <Link to="/primos" onClick={toggleMenu}>Primos</Link>
-                                </li>
-                                <li className="nav__link-mobile">
-                                    <Link to="/calculadora" onClick={toggleMenu}>Calculadora</Link>
-                                </li>
-                                <li className="nav__link-mobile">
-                                    <Link to="/aprende" onClick={toggleMenu}>Aprende</Link>
-                                </li>
-                            </ul>
+
+                            <Link className="nav__list-mobile-link" to="/criptografia" onClick={toggleMenu} >Criptografia</Link>
+
+                            <hr className="link-separate" />
+
+                            <Link className="nav__list-mobile-link" to="/primos" onClick={toggleMenu} >Primos</Link>
+                            <hr className="link-separate" />
+                                
+                            <Link className="nav__list-mobile-link" to="/calculadora" onClick={toggleMenu}>Calculadora</Link>
+                            <hr className="link-separate" />
+                            <Link className="nav__list-mobile-link" to="/aprende" onClick={toggleMenu}>Aprende</Link>
+
+
                         </div>
                     </div>
                 </nav>
