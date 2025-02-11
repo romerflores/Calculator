@@ -25,7 +25,6 @@
     transition: 0.5s;
     background-color: #ef233c;
 
-    z-index: -1;
 }
 
 .danger
@@ -66,5 +65,4 @@
 .button:hover
 {
     transform: scale(1.1);
-    z-index: -1;
 }

@@ -7,19 +7,21 @@ import "./header.css";
 
 import { Link } from "react-router";
 
+const textBanner = [
+    "Cristiano ronaldo gano 35 copas en toda su carrera",
+    "Messi fracaso en el 2014 pero conquisto la compa y el mundo en el 2022",
+    "El perrito kesi kesi de los memes te desea un feliz aprendizaje",
+    "La vida es bella, devemos disfrutar cada momento de esta, incluso si es lunes",
+    "Cuando Chuck Norris se quedo profundamente dormido no asistio a clases durante 2 dias, estos ahora se conocen como Sabado y Domingo"
+][Math.floor(Math.random() * 10) % 5];
+
 function Header() {
+    
     // Estado para controlar si el menú está abierto o cerrado
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
 
-    const textBanner = [
-        "Cristiano ronaldo gano 35 copas en toda su carrera",
-        "Messi fracaso en el 2014 pero conquisto la compa y el mundo en el 2022",
-        "El perrito kesi kesi de los memes te desea un feliz aprendizaje",
-        "La vida es bella, devemos disfrutar cada momento de esta, incluso si es lunes",
-        "Cuando Chuck Norris se quedo profundamente dormido no asistio a clases durante 2 dias, estos ahora se conocen como Sabado y Domingo"
-    ][Math.floor(Math.random() * 10) % 5];
 
     // Función que alterna el estado del menú
     const toggleMenu = () => {
