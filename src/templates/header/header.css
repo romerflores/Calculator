@@ -130,7 +130,9 @@ a {
 .navbar__mobile-menu.open {
     display: flex;
     opacity: 1;
-    width: 90%;
+    width: auto;
+    min-width: 30%;
+    height: 100%;
 
     animation: navBarEntrance 0.5s;
 
