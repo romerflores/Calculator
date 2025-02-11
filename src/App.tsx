@@ -9,6 +9,7 @@ import "./App.css"
 import NotFound from "./templates/notFound/NotFound";
 import TODO from "./components/TODO/TODO";
 import Home from "./pages/home/Home";
+import Primes from "./pages/primes/Primes";
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
         <section className="content-container">
             <Routes>
                 <Route path="/calculadora" element={<Calculator/>} />
-                <Route path="/primos" element={<TODO></TODO>} />
+                <Route path="/primos" element={<Primes></Primes>} />
                 <Route path="/criptografia" element={<TODO></TODO>} />
                 <Route path="/aprende" element={<TODO></TODO>} />
                 <Route path="/home" element={<Home/>} />

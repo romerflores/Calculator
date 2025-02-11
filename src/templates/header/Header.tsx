@@ -62,7 +62,7 @@ function Header() {
                                 <Link to="/criptografia">Criptografía</Link>
                             </li>
                             <li className="nav__link">
-                                <Link to="/calculadora">Caluladora</Link>
+                                <Link to="/calculadora">Calculadora</Link>
                             </li>
                             <li className="nav__link">
                                 <Link to="/aprende">Aprende</Link>
