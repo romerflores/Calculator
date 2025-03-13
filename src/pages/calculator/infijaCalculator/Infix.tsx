@@ -10,6 +10,8 @@ import Title from "../../../components/title/Title";
     Se debe realizar las validaciones para el input
 */
 
+const st=new Set(['1','2','3','4','5','6','7','8','9','0','(',')','+','*','%','/','-']);
+
 
 class BigIntCalculator {
     private static precedence: Record<string, number> = {
@@ -85,8 +87,15 @@ class BigIntCalculator {
     }
 }
 
-// Ejemplo de uso:
 
+function validateInput(input: string):boolean
+{
+    for(let i=0;i<input.length;i++)
+    {
+        if(!st.has(input[i]))return false;
+    }
+    return true;
+}
 
 
 function Infix() {
@@ -106,7 +115,8 @@ function Infix() {
 
 
     const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>)  => {
-        setInfixInput(event.target.value)
+
+        if(validateInput(event.target.value))setInfixInput(event.target.value);
 
     };
     
