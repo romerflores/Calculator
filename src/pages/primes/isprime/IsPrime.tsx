@@ -14,13 +14,14 @@ import BoxMessage from "../../../components/boxMessage/BoxMessage"
 const st = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]);
 let contAdmiration = 0;
 
-function isPrime(x:bigint)
+function isPrime(x:bigint):[boolean,bigint]
 {
+    if(x<=1n)return [false,-1n];
     for(let i=2n;i*i<=x;i++)
     {
         if(x%i==0n)return [false,i];
     }
-    return [true,0];
+    return [true,0n];
 }
 
 
@@ -73,11 +74,16 @@ function IsPrime() {
             if(ans[0])
             {
                 setTypeBoxMessage("okay")
-                setTextBoxMessage("El numero es primo")
+                setTextBoxMessage(`El numero ${number} es primo`)
             }
             else{
                 setTypeBoxMessage("danger")
-                setTextBoxMessage("El numero no es primo, al menos divisible por "+ans[1].toString())
+                if(ans[1]==-1n)
+                {
+                    setTextBoxMessage("Por definicion, este numero no es primo")
+                }
+                else{setTextBoxMessage("El numero no es primo, al menos divisible por "+ans[1].toString())}
+                
             }
 
         }

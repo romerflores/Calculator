@@ -7,10 +7,11 @@ import Exponentiation from "./exponentiation/Exponentation"
 import { useState } from "react"
 import NotFound from "../../templates/notFound/NotFound"
 import CalculatorInside from "./calculator/Calculator-inside"
+import Infix from "./infijaCalculator/Infix"
 
 function Calculator()
 {
-    const optionsCalculator=["GCD","LCM","Exponenciacion","Calculadora"]
+    const optionsCalculator=["GCD","LCM","Exponenciacion","Calculadora","Calculadora Infix"]
 
     const [activeComponent,changeActiveComponent]=useState<string | null>("GCD");
 
@@ -29,6 +30,8 @@ function Calculator()
             return <Exponentiation/>
         case "Calculadora":
             return <CalculatorInside></CalculatorInside>
+        case "Calculadora Infix":
+            return <Infix></Infix>
         default:
             return <NotFound></NotFound>;
         }
