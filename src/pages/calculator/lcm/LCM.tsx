@@ -19,10 +19,9 @@ function calculateGcd(a: bigint, b: bigint): bigint {
     return calculateGcd(b, a % b)
 }
 
-function calculateLcm(a: bigint, b: bigint): bigint
-{
-    const mcd=calculateGcd(a,b);
-    return (a*b)/mcd;
+function calculateLcm(a: bigint, b: bigint): bigint {
+    const mcd = calculateGcd(a, b);
+    return (a * b) / mcd;
 }
 
 function generateAdmiration(): string {
@@ -57,12 +56,14 @@ function LCM() {
         numberB: ""
     });
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>)  => {
+    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = event.target;
-        setNumbers((prevValues) => ({
-            ...prevValues,
-            [name]: value,  // Actualiza solo la propiedad correspondiente
-        }));
+        if (validateStringIsBigInteger(name) || validateStringIsBigInteger(value)) {
+            setNumbers((prevValues) => ({
+                ...prevValues,
+                [name]: value,  // Actualiza solo la propiedad correspondiente
+            }));
+        }
     };
 
 
@@ -70,14 +71,14 @@ function LCM() {
 
     const [messageResult, setMessageResult] = useState("")
 
-    const [messageBoxType,setMessageBoxType]=useState("none")
+    const [messageBoxType, setMessageBoxType] = useState("none")
 
     const handleCalculteGcd = () => {
 
         const a = numbers.numberA.toString();
         const b = numbers.numberB.toString();
 
-        if (!(validateStringIsBigInteger(a) && validateStringIsBigInteger(b)) || a.length==0 || b.length==0) {
+        if (!(validateStringIsBigInteger(a) && validateStringIsBigInteger(b)) || a.length == 0 || b.length == 0) {
             setLcmResult(" ... ");
             setMessageResult("Ingrese numeros validos" + generateAdmiration())
             setMessageBoxType("warning")

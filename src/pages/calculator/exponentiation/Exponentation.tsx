@@ -64,12 +64,14 @@ function Exponentiation() {
         numberB: ""
     });
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>)  => {
+    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = event.target;
-        setNumbers((prevValues) => ({
-            ...prevValues,
-            [name]: value,  // Actualiza solo la propiedad correspondiente
-        }));
+        if (validateStringIsBigInteger(name) || validateStringIsBigInteger(value)) {
+            setNumbers((prevValues) => ({
+                ...prevValues,
+                [name]: value,  // Actualiza solo la propiedad correspondiente
+            }));
+        }
     };
 
     const [expoResult, setExpoResult] = useState("")
@@ -104,7 +106,7 @@ function Exponentiation() {
                 ans = 0n
 
                 setExpoResult("INF");
-                setMessageResult("El numero es tan grande que supera la contidad de moleculas en el universo :0"+generateAdmiration())
+                setMessageResult("El numero es tan grande que supera la contidad de moleculas en el universo :0" + generateAdmiration())
                 setMessageBoxType("error")
             }
         }
@@ -134,7 +136,7 @@ function Exponentiation() {
                 onChange={handleInputChange}
                 padding="10px"
 
-                style_={{width:"200px",maxHeight:"300px",maxWidth:"200px"}}
+                style_={{ width: "200px", maxHeight: "300px", maxWidth: "200px" }}
             />
             <Input
                 name="numberB"
@@ -144,7 +146,7 @@ function Exponentiation() {
                 onChange={handleInputChange}
                 padding="10px"
 
-                style_={{width:"200px",maxHeight:"300px",maxWidth:"200px"}}
+                style_={{ width: "200px", maxHeight: "300px", maxWidth: "200px" }}
             />
             <div>
                 <Button textButton="Calcular" type="okay" onClick={handleCalculteGcd}></Button>

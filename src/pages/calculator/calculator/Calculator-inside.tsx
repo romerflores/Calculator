@@ -60,10 +60,13 @@ function CalculatorInside() {
 
     const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>)  => {
         const { name, value } = event.target;
-        setNumbers((prevValues) => ({
-            ...prevValues,
-            [name]: value,  // Actualiza solo la propiedad correspondiente
-        }));
+        if(validateStringIsBigInteger(name) || validateStringIsBigInteger(value))
+        {
+            setNumbers((prevValues) => ({
+                ...prevValues,
+                [name]: value,  // Actualiza solo la propiedad correspondiente
+            }));
+        }
     };
 
     const [operationResult, setOperationResult] = useState("")

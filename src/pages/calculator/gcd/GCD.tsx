@@ -50,26 +50,28 @@ function GCD() {
         numberB: ""
     });
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>)  => {
+    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = event.target;
-        setNumbers((prevValues) => ({
-            ...prevValues,
-            [name]: value,  // Actualiza solo la propiedad correspondiente
-        }));
+        if (validateStringIsBigInteger(name) || validateStringIsBigInteger(value)) {
+            setNumbers((prevValues) => ({
+                ...prevValues,
+                [name]: value,  // Actualiza solo la propiedad correspondiente
+            }));
+        }
     };
 
     const [gcdResult, setGcdResult] = useState("")
 
     const [messageResult, setMessageResult] = useState("")
 
-    const [messageBoxType,setMessageBoxType]=useState("none")
+    const [messageBoxType, setMessageBoxType] = useState("none")
 
     const handleCalculteGcd = () => {
 
         const a = numbers.numberA.toString();
         const b = numbers.numberB.toString();
 
-        if (!(validateStringIsBigInteger(a) && validateStringIsBigInteger(b)) || a.length==0 || b.length==0) {
+        if (!(validateStringIsBigInteger(a) && validateStringIsBigInteger(b)) || a.length == 0 || b.length == 0) {
             setGcdResult(" ... ");
             setMessageResult("Ingrese numeros validos" + generateAdmiration())
             setMessageBoxType("warning")
