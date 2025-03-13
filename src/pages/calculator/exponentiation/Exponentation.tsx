@@ -8,13 +8,6 @@ import { useState } from "react"
 import "../gcd/GCD.css"
 import Title from "../../../components/title/Title"
 
-/**
- * TODO
- * falta realizar la logica, para la validacion de no oermitir
- * numeros negatios en el exponente
- */
-
-
 
 const st = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]);
 let contAdmiration = 0;
@@ -28,6 +21,17 @@ function binpow(b: bigint, e: bigint): bigint {
 
     if (e & 1n) pot *= b;
 
+    return pot;
+}
+
+function binpowMod(b: bigint, e: bigint,m:bigint): bigint {
+    if (e <= 0n) return 1n;
+
+    let pot = binpow(b, e / 2n)%m;
+    pot *= pot;
+    pot%=m;
+    if (e & 1n) pot *= b;
+    pot%=m;
     return pot;
 }
 
@@ -64,6 +68,9 @@ function Exponentiation() {
         numberB: ""
     });
 
+    const [moduloInput, setModuloInput] = useState("");
+    const [enableMod, setEnableMod] = useState(false);
+
     const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = event.target;
         if (validateStringIsBigInteger(name) || validateStringIsBigInteger(value)) {
@@ -80,12 +87,17 @@ function Exponentiation() {
 
     const [messageBoxType, setMessageBoxType] = useState("none")
 
-    const handleCalculteGcd = () => {
+
+    const handleInputModChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        if(validateStringIsBigInteger(event.target.value))setModuloInput(event.target.value);
+    }
+    const handleCalculteExpo = () => {
 
         const a = numbers.numberA.toString();
         const b = numbers.numberB.toString();
+        const m = moduloInput.toString();
 
-        if (!(validateStringIsBigInteger(a) && validateStringIsBigInteger(b)) || a.length == 0 || b.length == 0) {
+        if (!(validateStringIsBigInteger(a) && validateStringIsBigInteger(b) && (enableMod)?validateStringIsBigInteger(m):true) || a.length == 0 || b.length == 0 || (enableMod)?(m.length == 0):false) {
             setExpoResult("...");
             setMessageResult("Ingrese numeros validos" + generateAdmiration())
             setMessageBoxType("warning")
@@ -93,21 +105,30 @@ function Exponentiation() {
         else {
             const aBigInt = BigInt(a);
             const bBigInt = BigInt(b);
-            let ans;
-            try {
-                ans = binpow(aBigInt, bBigInt)
-                setExpoResult(ans.toString());
+            const mBigInt = BigInt(m);
 
+            if (enableMod) {
+                setExpoResult(binpowMod(aBigInt,bBigInt,mBigInt).toString());
                 setMessageResult("😎")
                 setMessageBoxType("okay")
             }
-            catch {
-                console.error("El numero es mas grande que las moleculas en el universo")
-                ans = 0n
+            else {
+                let ans;
+                try {
+                    ans = binpow(aBigInt, bBigInt)
+                    setExpoResult(ans.toString());
 
-                setExpoResult("INF");
-                setMessageResult("El numero es tan grande que supera la contidad de moleculas en el universo :0" + generateAdmiration())
-                setMessageBoxType("error")
+                    setMessageResult("😎")
+                    setMessageBoxType("okay")
+                }
+                catch {
+                    console.error("El numero es mas grande que las moleculas en el universo")
+                    ans = 0n
+
+                    setExpoResult("INF");
+                    setMessageResult("El numero es tan grande que supera la contidad de moleculas en el universo :0" + generateAdmiration())
+                    setMessageBoxType("error")
+                }
             }
         }
 
@@ -123,7 +144,13 @@ function Exponentiation() {
         setExpoResult("")
         setMessageResult("")
         setMessageBoxType("none")
+        setEnableMod(false);
+        setModuloInput("");
     };
+
+    const handleChangeEnable = () => {
+        setEnableMod(!enableMod);
+    }
 
     return (
         <section className="gcd-content">
@@ -148,8 +175,19 @@ function Exponentiation() {
 
                 style_={{ width: "200px", maxHeight: "300px", maxWidth: "200px" }}
             />
+            <Title textTitle="¿Modulo?"></Title><input type="checkbox" onChange={handleChangeEnable} checked={enableMod} />
+            <Input
+                name="mod"
+                textInput={enableMod ? "Ingrese Modulo" : ""}
+                placeholderInput="MOD"
+                value={moduloInput}
+                onChange={handleInputModChange}
+                style_={{ display: enableMod ? "block" : "none" }}
+                padding="10px"
+            >
+            </Input>
             <div>
-                <Button textButton="Calcular" type="okay" onClick={handleCalculteGcd}></Button>
+                <Button textButton="Calcular" type="okay" onClick={handleCalculteExpo}></Button>
                 <Button textButton="Limpiar" type="submit" onClick={handleClear} />
             </div>
             <BoxMessage
