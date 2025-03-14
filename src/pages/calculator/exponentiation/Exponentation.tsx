@@ -8,32 +8,11 @@ import { useState } from "react"
 import "../gcd/GCD.css"
 import Title from "../../../components/title/Title"
 
+import { binPow,binPowMod } from "../../../utils/maths"
+
 
 const st = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]);
 let contAdmiration = 0;
-
-
-function binpow(b: bigint, e: bigint): bigint {
-    if (e <= 0n) return 1n;
-
-    let pot = binpow(b, e / 2n);
-    pot *= pot;
-
-    if (e & 1n) pot *= b;
-
-    return pot;
-}
-
-function binpowMod(b: bigint, e: bigint,m:bigint): bigint {
-    if (e <= 0n) return 1n;
-
-    let pot = binpow(b, e / 2n)%m;
-    pot *= pot;
-    pot%=m;
-    if (e & 1n) pot *= b;
-    pot%=m;
-    return pot;
-}
 
 
 function generateAdmiration(): string {
@@ -110,7 +89,7 @@ function Exponentiation() {
             if (enableMod) {
                 if(mBigInt!=0n)
                 {
-                    setExpoResult(binpowMod(aBigInt,bBigInt,mBigInt).toString());
+                    setExpoResult(binPowMod(aBigInt,bBigInt,mBigInt).toString());
                     setMessageResult("😎")
                     setMessageBoxType("okay")
                 }
@@ -124,7 +103,7 @@ function Exponentiation() {
             else {
                 let ans;
                 try {
-                    ans = binpow(aBigInt, bBigInt)
+                    ans = binPow(aBigInt, bBigInt)
                     setExpoResult(ans.toString());
 
                     setMessageResult("😎")

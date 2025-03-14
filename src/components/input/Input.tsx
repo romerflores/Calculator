@@ -30,8 +30,6 @@ function Input(props:inputProps)
             <label>{textInput}</label>
             <textarea  placeholder={placeholderInput} value={value} onChange={onChange} name={name} style={style_}/>
         </div>
-
-
     )
 }
 

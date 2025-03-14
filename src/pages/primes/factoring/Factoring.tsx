@@ -6,6 +6,10 @@ import Button from "../../../components/button";
 import {validateIsBigInteger} from "../../../utils/validates"
 import { primesFactoringString } from "../../../utils/maths";
 
+/*  TODO
+    Se debe mejorar la factorizacion de numeros primos con la rueda de pollard
+*/
+
 
 function Factoring()
 {
@@ -39,7 +43,7 @@ function Factoring()
 
     const handleInputChange=(event: React.ChangeEvent<HTMLTextAreaElement>)=>
     {
-        if(validateIsBigInteger(event.target.value))setInputFactoring(event.target.value);
+        if(validateIsBigInteger(event.target.value) && event.target.value.length<=17)setInputFactoring(event.target.value);
     }
 
     const handleClear=()=>

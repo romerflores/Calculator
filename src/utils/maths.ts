@@ -1,3 +1,80 @@
+
+export class BigIntCalculator {
+    private static precedence: Record<string, number> = {
+        '+': 1,
+        '-': 1,
+        '*': 2,
+        '/': 2,
+        '%': 2,
+    };
+
+    private static isOperator(token: string): boolean {
+        return ['+', '-', '*', '/', '%'].includes(token);
+    }
+
+    private static toPostfix(expression: string): string[] {
+        const output: string[] = [];
+        const operators: string[] = [];
+        const tokens = expression.match(/\d+|[+\-*/%()]/g) || [];
+
+        for (const token of tokens) {
+            if (/\d+/.test(token)) {
+                output.push(token);
+            } else if (this.isOperator(token)) {
+                while (
+                    operators.length &&
+                    operators[operators.length - 1] !== '(' &&
+                    this.precedence[operators[operators.length - 1]] >= this.precedence[token]
+                ) {
+                    output.push(operators.pop()!);
+                }
+                operators.push(token);
+            } else if (token === '(') {
+                operators.push(token);
+            } else if (token === ')') {
+                while (operators.length && operators[operators.length - 1] !== '(') {
+                    output.push(operators.pop()!);
+                }
+                operators.pop();
+            }
+        }
+
+        while (operators.length) {
+            output.push(operators.pop()!);
+        }
+
+        return output;
+    }
+
+    private static evaluatePostfix(postfix: string[]): bigint {
+        const stack: bigint[] = [];
+
+        for (const token of postfix) {
+            if (/\d+/.test(token)) {
+                stack.push(BigInt(token));
+            } else {
+                const b = stack.pop()!;
+                const a = stack.pop()!;
+                switch (token) {
+                case '+': stack.push(a + b); break;
+                case '-': stack.push(a - b); break;
+                case '*': stack.push(a * b); break;
+                case '/': stack.push(a / b); break;
+                case '%': stack.push(a % b); break;
+                }
+            }
+        }
+        return stack.pop()!;
+    }
+
+    static evaluate(expression: string): bigint {
+        const postfix = this.toPostfix(expression);
+        return this.evaluatePostfix(postfix);
+    }
+}
+
+
+
 export function gcd(a: bigint, b: bigint): bigint {
     if (b == 0n) return a;
     return gcd(b, a % b);
