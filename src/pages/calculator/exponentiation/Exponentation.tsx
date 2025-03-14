@@ -108,9 +108,18 @@ function Exponentiation() {
             const mBigInt = BigInt(m);
 
             if (enableMod) {
-                setExpoResult(binpowMod(aBigInt,bBigInt,mBigInt).toString());
-                setMessageResult("😎")
-                setMessageBoxType("okay")
+                if(mBigInt!=0n)
+                {
+                    setExpoResult(binpowMod(aBigInt,bBigInt,mBigInt).toString());
+                    setMessageResult("😎")
+                    setMessageBoxType("okay")
+                }
+                else
+                {
+                    setMessageResult("Error, no se puede dividir entre 0")
+                    setMessageBoxType("danger")
+                }
+                
             }
             else {
                 let ans;

@@ -1,6 +1,6 @@
 
 .primes-container{
-    background-color: var(--blue);
+    background-color: var(--withe);
 
     width: 100%;
     height: auto;
@@ -18,13 +18,16 @@
 {
     width: auto;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     height: auto;
     min-height: 500px;
 
     border-radius: 30px;
 
-    background-color: var(--sky_blue);
+    background-color: var(--gray);
 
     padding: 20px;
 

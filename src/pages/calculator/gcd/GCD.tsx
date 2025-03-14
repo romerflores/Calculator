@@ -140,4 +140,4 @@ function GCD() {
 
     )
 }
-export default GCD
+export default GCD;
