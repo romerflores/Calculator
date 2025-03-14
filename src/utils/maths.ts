@@ -113,22 +113,18 @@ export function isPrimeSlow(number: bigint): boolean {
     return true;
 }
 
-export function primesTo(numero: number):Array<number>
-{
-    const limite=numero
-    const primos=[]
+export function primesTo(numero: number): Array<number> {
+    const limite = numero
+    const primos = []
     // console.log(limite,typeof limite)
-    const numeros = new Array(limite+5).fill(true);
-    numeros[0]=numeros[1]=false
+    const numeros = new Array(limite + 5).fill(true);
+    numeros[0] = numeros[1] = false
 
-    for(let i=2;i<=limite;i++)
-    {
-        if(numeros[i])
-        {
+    for (let i = 2; i <= limite; i++) {
+        if (numeros[i]) {
             primos.push(i);
-            for(let j=2*i;j<=limite;j+=i)
-            {
-                numeros[j]=false 
+            for (let j = 2 * i; j <= limite; j += i) {
+                numeros[j] = false
             }
         }
     }
@@ -136,21 +132,55 @@ export function primesTo(numero: number):Array<number>
 }
 
 
-export function primesFactoringString(numero:number):string
-{
-    const criba=primesTo(Math.ceil(Math.sqrt(numero)))
-    const ans=[]
+export function primesFactoringString(numero: number): string {
+    const criba = primesTo(Math.ceil(Math.sqrt(numero)))
+    const ans = []
 
     // console.log(criba)
-    for(let i=0;i<criba.length;i++)
-    {
-        while(numero%criba[i]==0)
-        {
+    for (let i = 0; i < criba.length; i++) {
+        while (numero % criba[i] == 0) {
             ans.push(criba[i])
-            numero/=criba[i]
+            numero /= criba[i]
         }
     }
-    if(numero!=1)ans.push(numero)
+    if (numero != 1) ans.push(numero)
 
     return ans.join("x")
+}
+
+
+
+
+
+export function millerRabinTest(n: bigint, k: number): boolean {
+    if (n <= 1n) return false; // 0 y 1 no son primos
+    if (n <= 3n) return true;  // 2 y 3 son primos
+
+    // Escribir n-1 como d * 2^s
+    let s = 0;
+    let d = n - 1n;
+    while (d % 2n === 0n) {
+        d = d / 2n;
+        s++;
+    }
+
+    // Realizar el test k veces
+    for (let i = 0; i < k; i++) {
+        // Generar un número aleatorio entre 2 y n-2
+        const random = BigInt(Math.floor(Math.random() * Number(n - 3n))) + 2n;
+        const a = random < 2n ? 2n : random; // Asegurar que sea al menos 2
+        let x = binPowMod(a, d, n);
+
+        if (x === 1n || x === n - 1n) continue;
+
+        for (let j = 0; j < s - 1; j++) {
+            x = binPowMod(x, 2n, n);
+            if (x === 1n) return false; // No es primo
+            if (x === n - 1n) break;
+        }
+
+        if (x !== n - 1n) return false; // No es primo
+    }
+
+    return true; // Probablemente primo
 }

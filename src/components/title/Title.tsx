@@ -5,7 +5,7 @@ interface titleProps {
     textColor?: string,
     textSize?: string,
     textAlign_?: "left" | "right" | "center" | "justify" | "start" | "end";
-    textBorder?:string
+    textBorder?:string ///
 }
 
 

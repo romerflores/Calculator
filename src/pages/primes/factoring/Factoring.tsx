@@ -3,7 +3,7 @@ import Input from "../../../components/input/Input"
 import Title from "../../../components/title/Title";
 import BoxMessage from "../../../components/boxMessage/BoxMessage";
 import Button from "../../../components/button";
-import {validateIsBigInteger} from "../../../utils/validates"
+import {validateStringIsBigInteger} from "../../../utils/validates"
 import { primesFactoringString } from "../../../utils/maths";
 
 /*  TODO
@@ -26,7 +26,7 @@ function Factoring()
             setTextBoxMessage("El numero es muy grande y no puedo factorizarlo :(")
             setTypeBoxMessage("warning")
         }
-        else if(validateIsBigInteger(inputFactoring) && inputFactoring.length>0 && BigInt(inputFactoring)>0n)
+        else if(validateStringIsBigInteger(inputFactoring) && inputFactoring.length>0 && BigInt(inputFactoring)>0n)
         {
             //factorizar
             // console.log()
@@ -43,7 +43,7 @@ function Factoring()
 
     const handleInputChange=(event: React.ChangeEvent<HTMLTextAreaElement>)=>
     {
-        if(validateIsBigInteger(event.target.value) && event.target.value.length<=17)setInputFactoring(event.target.value);
+        if(validateStringIsBigInteger(event.target.value) && event.target.value.length<=17)setInputFactoring(event.target.value);
     }
 
     const handleClear=()=>

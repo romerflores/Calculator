@@ -5,6 +5,7 @@ import "./primes.css"
 import NotFound from "../../templates/notFound/NotFound";
 import IsPrime from "./isprime/IsPrime";
 import Factoring from "./factoring/Factoring";
+import MillerRabin from "./millerRabin/MillerRabin";
 
 function Primes() {
 
@@ -19,7 +20,7 @@ function Primes() {
         case "isprime":
             return <IsPrime></IsPrime>
         case "test":
-            return "teset"
+            return <MillerRabin></MillerRabin>
 
         case "criba":
             return "Eratostenes"

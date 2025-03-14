@@ -16,7 +16,7 @@ const textBanner = [
 ][Math.floor(Math.random() * 10) % 5];
 
 function Header() {
-    
+
     // Estado para controlar si el menú está abierto o cerrado
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -67,6 +67,9 @@ function Header() {
                             <li className="nav__link">
                                 <Link to="/aprende">Aprende</Link>
                             </li>
+                            <li className="nav__link">
+                                <Link to="/bits">Bits</Link>
+                            </li>
                         </ul>
                         <button className="navbar__toggle-btn" onClick={toggleMenu}>
                             <img src={menuImage} alt="Menú desplegar" />
@@ -79,10 +82,12 @@ function Header() {
 
                             <Link className="nav__list-mobile-link" to="/primos" onClick={toggleMenu} >Primos</Link>
                             <hr className="link-separate" />
-                                
+
                             <Link className="nav__list-mobile-link" to="/calculadora" onClick={toggleMenu}>Calculadora</Link>
                             <hr className="link-separate" />
                             <Link className="nav__list-mobile-link" to="/aprende" onClick={toggleMenu}>Aprende</Link>
+                            <hr className="link-separate" />
+                            <Link className="nav__list-mobile-link" to="/bits" onClick={toggleMenu}>Bits</Link>
 
 
                         </div>
