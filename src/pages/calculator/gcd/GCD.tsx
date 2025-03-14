@@ -8,8 +8,8 @@ import { useState } from "react"
 import "./GCD.css"
 import Title from "../../../components/title/Title"
 
+import { validateStringIsBigInteger } from "../../../utils/validates"
 
-const st = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]);
 let contAdmiration = 0;
 
 
@@ -33,14 +33,6 @@ function generateAdmiration(): string {
     return ans
 }
 
-function validateStringIsBigInteger(cad: string): boolean {
-    for (let i = 0; i < cad.length; i++) {
-        if (!st.has(cad[i])) {
-            return false;
-        }
-    }
-    return true;
-}
 
 
 

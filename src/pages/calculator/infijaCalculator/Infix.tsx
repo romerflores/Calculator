@@ -5,25 +5,13 @@ import Input from "../../../components/input/Input";
 import Title from "../../../components/title/Title";
 
 import { BigIntCalculator } from "../../../utils/maths";
-
+import { validateStringIsInfix } from "../../../utils/validates";
 
 /*TODO
 
     Se debe realizar las validaciones para el input
 */
 
-const st=new Set(['1','2','3','4','5','6','7','8','9','0','(',')','+','*','%','/','-']);
-
-
-
-function validateInput(input: string):boolean
-{
-    for(let i=0;i<input.length;i++)
-    {
-        if(!st.has(input[i]))return false;
-    }
-    return true;
-}
 
 
 function Infix() {
@@ -44,7 +32,7 @@ function Infix() {
 
     const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>)  => {
 
-        if(validateInput(event.target.value))setInfixInput(event.target.value);
+        if(validateStringIsInfix(event.target.value))setInfixInput(event.target.value);
 
     };
     

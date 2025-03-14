@@ -8,15 +8,14 @@ import { useState } from "react"
 import "../gcd/GCD.css"
 import Title from "../../../components/title/Title"
 
+import { validateStringIsBigInteger } from "../../../utils/validates"
+
 /**
  * TODO
  * falta realizar la logica, para la validacion de no oermitir
  * numeros negatios en el exponente
  */
 
-
-
-const st = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]);
 let contAdmiration = 0;
 
 
@@ -34,20 +33,6 @@ function generateAdmiration(): string {
         }
     }
     return ans
-}
-
-function validateStringIsBigInteger(cad: string): boolean {
-    let ini=0;
-    if(cad.length>0)
-    {
-        if(cad[0]=='-' || cad[0]=="+")ini++;
-    }
-    for (let i = ini; i < cad.length; i++) {
-        if (!st.has(cad[i])) {
-            return false;
-        }
-    }
-    return true;
 }
 
 
