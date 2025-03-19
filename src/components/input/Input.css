@@ -11,6 +11,8 @@
     min-height: 50px;
     height: auto;
 
+    flex-wrap: wrap;
+
     justify-content: space-around;
     align-items: center;
 
@@ -31,7 +33,8 @@
 
 .inputRow label
 {
-    width: 150px;
+    width: auto;
+    max-width: 150px;
     text-align: center;
     padding-right: 20px;
     overflow: hidden;
