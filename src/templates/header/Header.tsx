@@ -65,7 +65,7 @@ function Header() {
                                 <Link to="/calculadora">Calculadora</Link>
                             </li>
                             <li className="nav__link">
-                                <Link to="/aprende">Aprende</Link>
+                                <Link to="/aprende">3 en Raya</Link>
                             </li>
                             <li className="nav__link">
                                 <Link to="/bits">Bits</Link>
@@ -85,7 +85,7 @@ function Header() {
 
                             <Link className="nav__list-mobile-link" to="/calculadora" onClick={toggleMenu}>Calculadora</Link>
                             <hr className="link-separate" />
-                            <Link className="nav__list-mobile-link" to="/aprende" onClick={toggleMenu}>Aprende</Link>
+                            <Link className="nav__list-mobile-link" to="/aprende" onClick={toggleMenu}>3 en Raya</Link>
                             <hr className="link-separate" />
                             <Link className="nav__list-mobile-link" to="/bits" onClick={toggleMenu}>Bits</Link>
 

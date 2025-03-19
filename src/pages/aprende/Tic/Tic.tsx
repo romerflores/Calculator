@@ -74,6 +74,7 @@ function Tic() {
         setBoard(Array(9).fill(""))
         setTurn(TURNS.X);
         setWinner(WINNER_STATES.NO_WINNER);
+        localStorage.clear();
 
     }
 
