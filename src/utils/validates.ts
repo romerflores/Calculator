@@ -19,6 +19,15 @@ export function validateStringIsInfix(cad: string): boolean {
     return true;
 }
 
+export function validateStringIsBinary(cad:string):boolean
+{
+    for(let i=0;i<cad.length;i++)
+    {
+        if(cad[i]!="0" && cad[i]!="1")return false;
+    }
+    return true;
+}
+
 
 export const checkWinner = (boardToCheck: Array<string>) => {
 

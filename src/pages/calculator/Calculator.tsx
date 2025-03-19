@@ -8,6 +8,7 @@ import { useState } from "react"
 import NotFound from "../../templates/notFound/NotFound"
 import CalculatorInside from "./calculator/Calculator-inside"
 import Infix from "./infijaCalculator/Infix"
+import WineContent from "../../components/themesContent/WineContent"
 
 function Calculator()
 {
@@ -39,7 +40,7 @@ function Calculator()
 
 
     return (
-        <>
+        <WineContent color="var(--gray)">
             <Title textTitle={"Calculadora de numero Grandes"} textColor="black" textSize="30"></Title>
             <section className="calculator-content">
                 <ul>
@@ -50,7 +51,7 @@ function Calculator()
                 <>{renderComponent()}</>
                 
             </section>
-        </>
+        </WineContent>
     )
 }
 export default Calculator

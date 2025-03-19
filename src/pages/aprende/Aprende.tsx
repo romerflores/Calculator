@@ -1,11 +1,12 @@
+import WineContent from "../../components/themesContent/WineContent"
 import Tic from "./Tic/Tic"
 
 
 function Aprende()
 {
-    return <div className="bits-container">
+    return <WineContent>
         <Tic></Tic>
-    </div>
+    </WineContent>
 }
 
 export default Aprende

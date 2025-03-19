@@ -1,0 +1,12 @@
+.wine-container
+{
+    width: 100%;
+    
+    min-height: 500px;
+
+    background-color: var(--wine);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

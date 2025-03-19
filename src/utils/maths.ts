@@ -184,3 +184,16 @@ export function millerRabinTest(n: bigint, k: number): boolean {
 
     return true; // Probablemente primo
 }
+
+
+export function binaryToBigInteger(cad:string):bigint
+{
+    let ans=0n
+
+    for(let i=0;i<cad.length;i++)
+    {
+        ans*=2n;
+        if(cad[i]=="1")ans+=1n;
+    }
+    return BigInt(ans);
+}

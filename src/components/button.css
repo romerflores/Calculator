@@ -82,6 +82,7 @@
 {
     background-color: var(--white);
     color: var(--wine);
+    border: 1px solid var(--wine);
 }
 
 .toSelectV2:hover

@@ -2,6 +2,9 @@ import { useState } from "react"
 import Button from "../../components/button"
 import Title from "../../components/title/Title"
 import "./bits.css"
+import NotFound from "../../templates/notFound/NotFound"
+import BitsToInteger from "./bitsToInteger/BitsToInteger"
+import WineContent from "../../components/themesContent/WineContent"
 
 function Bits() {
 
@@ -10,7 +13,20 @@ function Bits() {
     const [activeComponent, setActiveComponent] = useState(optionsBits[0])
 
 
-    return <div className="bits-container">
+    const renderComponent = () => {
+        switch (activeComponent) {
+        case "De binario a entero":
+            return <BitsToInteger></BitsToInteger>
+        case "De entero a binario":
+            return "de entero a binario"
+        case "Operaciones bit a bit":
+            return "hola mundo bit abit"
+        default:
+            return <NotFound></NotFound>;
+        }
+    };
+
+    return <WineContent>
         <Title
             textTitle="Operaciones con bits"
             textColor="white"
@@ -23,8 +39,13 @@ function Bits() {
                     <Button key={elemento} type={(activeComponent == elemento) ? "selectedV2" : "toSelectV2"} textButton={elemento} onClick={() => setActiveComponent(elemento)} />
                 )}
             </ul>
+            <section className="primes-container-content">
+                {
+                    renderComponent()
+                }
+            </section>
         </section>
-    </div>
+    </WineContent>
 
 }
 export default Bits

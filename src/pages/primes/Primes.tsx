@@ -6,6 +6,7 @@ import NotFound from "../../templates/notFound/NotFound";
 import IsPrime from "./isprime/IsPrime";
 import Factoring from "./factoring/Factoring";
 import MillerRabin from "./millerRabin/MillerRabin";
+import WineContent from "../../components/themesContent/WineContent";
 
 function Primes() {
 
@@ -35,7 +36,7 @@ function Primes() {
 
 
     return (<>
-        <section className="primes-container">
+        <WineContent color="var(--white)">
             <Title textTitle="Numeros Primos" textColor="black" textSize="30" />
 
             <nav className="primes-button-content">
@@ -51,7 +52,7 @@ function Primes() {
             <section className="primes-container-content">
                 {renderPrimerContent()}
             </section>
-        </section>
+        </WineContent>
     </>)
 }
 

@@ -4,7 +4,7 @@
 {
     width: auto;
     max-width: 1000px;
-    min-width: 60%;
+    min-width: 40%;
     height: auto;
     min-height: 500px;
     border: 2px solid var(--wine);
