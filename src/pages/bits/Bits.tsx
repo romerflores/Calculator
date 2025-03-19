@@ -20,7 +20,7 @@ function Bits() {
         <section className="bits-content">
             <ul>
                 {optionsBits.map(elemento =>
-                    <Button key={elemento} type={(activeComponent == elemento) ? "toSelectV2" : "selectedV2"} textButton={elemento} onClick={() => setActiveComponent(elemento)} />
+                    <Button key={elemento} type={(activeComponent == elemento) ? "selectedV2" : "toSelectV2"} textButton={elemento} onClick={() => setActiveComponent(elemento)} />
                 )}
             </ul>
         </section>

@@ -94,6 +94,7 @@ function Header() {
                     </div>
                 </nav>
             </section>
+            <hr style={{width:"100%",color:"var(--white)",border:"solid 1px var(--white)"}}/>
         </header>
     );
 }

@@ -66,16 +66,25 @@
 
 .button:hover
 {
-    transform: scale(1.07);
-}
-
-.toSelectV2
-{
-    background-color: var(--wine);
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .selectedV2
 {
+    background-color: var(--wine);
+    color:var(--white)
+}
+
+
+
+.toSelectV2
+{
     background-color: var(--white);
     color: var(--wine);
+}
+
+.toSelectV2:hover
+{
+    background-color: #6c000d3d;
 }

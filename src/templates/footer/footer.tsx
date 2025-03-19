@@ -54,13 +54,13 @@ function Footer()
             <hr className="linea" />
             <div className="container__footer">
                 <div className="redes__item">
-                    <a href="#"><img className="red__image" src={github} alt="GH Romer" /></a>
-                    <a href="#"><img className="red__image" src={facebook} alt="Fb Romer" /></a>
-                    <a href="#"><img className="red__image" src={youtube} alt="YTB Romer" /></a>
-                    <a href="#"><img className="red__image" src={twitter} alt="X Romer" /></a>
+                    <a href="https://github.com/romerflores" target="_blank"><img className="red__image" src={github} alt="GH Romer" /></a>
+                    <a href="https://www.facebook.com/romerflores9z" target="_blank"><img className="red__image" src={facebook} alt="Fb Romer" /></a>
+                    <a href="https://www.youtube.com/@romerproblem" target="_blank"><img className="red__image" src={youtube} alt="YTB Romer" /></a>
+                    <a href="https://www.x.com/romermcr14" target="_blank"><img className="red__image" src={twitter} alt="X Romer" /></a>
                 </div>
                 <div className="redes__item">
-                    <a href="#">
+                    <a href="https://facebook.com/romerflores9z" target="_blank">
                         <img src={donate} className="red__image" alt="Donar" />
                         <p>Comprame un café</p>
                     </a>
