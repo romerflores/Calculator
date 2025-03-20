@@ -40,12 +40,12 @@ function Calculator()
 
 
     return (
-        <WineContent color="var(--gray)">
-            <Title textTitle={"Calculadora de numero Grandes"} textColor="black" textSize="30"></Title>
-            <section className="calculator-content">
+        <WineContent color="var(--wine)">
+            <Title textTitle={"Calculadora de numero Grandes"} textColor="var(--white)" textSize="30"></Title>
+            <section className="bits-content">
                 <ul>
                     {optionsCalculator.map(elemento =>
-                        <Button key={elemento} type={(activeComponent==elemento)? "selected":"toSelect"} textButton={elemento} onClick={()=> changeActiveComponent(elemento)} />
+                        <Button key={elemento} type={(activeComponent==elemento)? "selectedV2":"toSelectV2"} textButton={elemento} onClick={()=> changeActiveComponent(elemento)} />
                     )}
                 </ul>
                 <>{renderComponent()}</>

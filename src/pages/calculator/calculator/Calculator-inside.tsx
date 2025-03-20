@@ -129,7 +129,7 @@ function CalculatorInside() {
 
     return (
         <section className="gcd-content">
-            <Title textTitle="Calculadora (Soporta numeros grandes)" textColor="black" textSize="25"></Title>
+            <Title textTitle="Calculadora" textColor="var(--wine)" textSize="30"></Title>
             <Input
                 name="numberA"
                 placeholderInput="Numero A"

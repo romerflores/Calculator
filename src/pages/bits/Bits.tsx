@@ -5,6 +5,8 @@ import "./bits.css"
 import NotFound from "../../templates/notFound/NotFound"
 import BitsToInteger from "./bitsToInteger/BitsToInteger"
 import WineContent from "../../components/themesContent/WineContent"
+import IntegerToBinary from "./integerToBinary/IntegerToBinary"
+import BitsOperations from "./bitOperations/BitsOperations"
 
 function Bits() {
 
@@ -18,9 +20,9 @@ function Bits() {
         case "De binario a entero":
             return <BitsToInteger></BitsToInteger>
         case "De entero a binario":
-            return "de entero a binario"
+            return <IntegerToBinary></IntegerToBinary>
         case "Operaciones bit a bit":
-            return "hola mundo bit abit"
+            return <BitsOperations></BitsOperations>
         default:
             return <NotFound></NotFound>;
         }

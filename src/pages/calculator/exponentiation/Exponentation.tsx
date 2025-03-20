@@ -132,7 +132,7 @@ function Exponentiation() {
 
     return (
         <section className="gcd-content">
-            <Title textTitle="Exponenciacion binaria" textColor="black" textSize="25"></Title>
+            <Title textTitle="Exponenciacion binaria" textColor="var(--wine)" textSize="30"></Title>
             <Input
                 name="numberA"
                 placeholderInput="Base"

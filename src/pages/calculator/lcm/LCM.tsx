@@ -108,7 +108,7 @@ function LCM() {
 
     return (
         <section className="gcd-content">
-            <Title textTitle="Minimo comun multiplo" textColor="black" textSize="25"></Title>
+            <Title textTitle="Minimo comun multiplo" textColor="var(--wine)" textSize="30"></Title>
             <Input
                 name="numberA"
                 placeholderInput="Numero A"

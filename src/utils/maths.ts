@@ -197,3 +197,19 @@ export function binaryToBigInteger(cad:string):bigint
     }
     return BigInt(ans);
 }
+
+
+export function stringIntegerToBinary(cad:string):string
+{
+    let num=BigInt(cad);
+
+    let ans=""
+
+    while(num>0n)
+    {
+        const d=num%2n
+        ans=d+ans;
+        num/=2n;
+    }
+    return ans;
+}

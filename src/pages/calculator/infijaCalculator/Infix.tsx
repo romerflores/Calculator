@@ -54,7 +54,7 @@ function Infix() {
 
 
     return <section className="gcd-content">
-        <Title textTitle="Calculadora de expresiones (Beta)" textColor="black" textSize="25"></Title>
+        <Title textTitle="Calculadora de expresiones (Beta)" textColor="var(--wine)" textSize="30"></Title>
         <Input
             name="numberA"
             placeholderInput="(3+3)*2"

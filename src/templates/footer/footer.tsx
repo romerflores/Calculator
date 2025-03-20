@@ -41,13 +41,13 @@ function Footer()
                     </ul>
                 </div>
                 <div className="lista__item">
-                    <h3>TODO</h3>
+                    <h3>OPERACIONES DE BITS</h3>
                     <ul>
-                        <li><a className="lista__item__link" href="#">Lista item</a></li>
-                        <li><a className="lista__item__link" href="#">Lista item</a></li>
-                        <li><a className="lista__item__link" href="#">Lista item</a></li>
-                        <li><a className="lista__item__link" href="#">Lista item</a></li>
-                        <li><a className="lista__item__link" href="#">Lista item</a></li>
+                        <li><a className="lista__item__link" href="#">De Entero a Binario</a></li>
+                        <li><a className="lista__item__link" href="#">de Binario a Entero</a></li>
+                        <li><a className="lista__item__link" href="#">Operaciones bit a bit</a></li>
+                        {/* <li><a className="lista__item__link" href="#">Lista item</a></li>
+                        <li><a className="lista__item__link" href="#">Lista item</a></li> */}
                     </ul>
                 </div>
             </div>

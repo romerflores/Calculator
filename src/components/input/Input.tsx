@@ -6,13 +6,13 @@ interface inputProps
 {
     textInput:string;
     placeholderInput?:string;
-                         //un text area no tiene un typeinput
     name:string;
     value:string;
     onChange:(event: React.ChangeEvent<HTMLTextAreaElement>) => void;
     padding?:string
     
     style_?:CSSProperties  ///ojo se debe mandar como objeto
+    isActive?:boolean ///Para descaticar el tex area
 
 }
 
@@ -21,14 +21,19 @@ function Input(props:inputProps)
 
 
 
-    const {textInput,placeholderInput="",name,value="",onChange,padding="0px",style_={}}=props
-
+    const {textInput,placeholderInput="",name,value="",onChange,padding="0px",style_={},isActive=true}=props
 
 
     return (
-        <div className="inputRow" style={{padding:padding}}>
+        <div className="inputRow" style={{padding:padding,display:(isActive)?"flex":"none"}}>
             <label>{textInput}</label>
-            <textarea  placeholder={placeholderInput} value={value} onChange={onChange} name={name} style={style_}/>
+            <textarea 
+                placeholder={placeholderInput}
+                value={value}
+                onChange={onChange}
+                name={name}
+                style={style_}
+            />
         </div>
     )
 }
