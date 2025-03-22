@@ -1,0 +1,97 @@
+
+
+.petalo {
+
+    width: 30px;
+    height: 130px;
+    background: rgb(193, 70, 10);
+    background: linear-gradient(rgba(193, 70, 10, 1) 0%, rgba(191, 210, 45, 1) 50%, rgba(200, 255, 0, 1) 100%);
+    border-radius: 50%;
+    border: solid 1px orange;
+
+    position: absolute; /* Para posicionarlos en el mismo punto */
+    transform-origin: bottom center; /* Punto de rotación */
+
+    transition: 0.3s;
+
+    z-index: 10;
+
+    animation: entrada 5s ease;
+
+
+    
+}
+
+.petalo:hover
+{
+    
+    scale: 1.2;
+}
+
+.flor
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    /* background-color: lightgray; */
+    position: relative;
+}
+
+.centro
+{
+    width: 70px;
+    height: 70px;
+    background-color: brown;
+    border-radius: 50%;
+    border: solid 1px orange;
+
+    transform: translateY(60px);
+
+    position: absolute; /* Para posicionarlos en el mismo punto */
+    transform-origin: bottom center; /* Punto de rotación */
+
+
+    transition: 1s;
+
+    z-index: 11;
+
+    animation: entrada 5s ease;
+}
+
+.centro:hover{
+
+    scale: 1.1;
+}
+
+
+.base
+{
+    height: 300px;
+    width: 10px;
+    border-radius: 10%;
+
+    background: rgb(7,32,5);
+    background: linear-gradient(90deg, rgba(7,32,5,1) 0%, rgba(22,190,10,1) 48%, rgba(133,240,137,1) 100%); 
+
+    z-index: 9;
+    transform: translateY(200px);
+
+ /* Para posicionarlos en el mismo punto */
+ position: absolute; /* Para posicionarlos en el mismo punto */
+    transform-origin: bottom center; /* Punto de rotación */
+
+    animation: entrada ease 5s;
+
+}
+
+
+@keyframes entrada {
+    from{
+        transform: translateY(500px) scale(0.1);
+    }
+    to{
+        transform: translateY(200px) rotate() scale(1);
+    }
+}
