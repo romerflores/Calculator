@@ -14,7 +14,7 @@
 
     transition: 0.3s;
 
-    z-index: 10;
+    z-index: 1;
 
     animation: entrada 5s ease;
 
@@ -55,7 +55,7 @@
 
     transition: 1s;
 
-    z-index: 11;
+    z-index: 1;
 
     animation: entrada 5s ease;
 }
@@ -75,7 +75,7 @@
     background: rgb(7,32,5);
     background: linear-gradient(90deg, rgba(7,32,5,1) 0%, rgba(22,190,10,1) 48%, rgba(133,240,137,1) 100%); 
 
-    z-index: 9;
+    z-index: 0;
     transform: translateY(200px);
 
  /* Para posicionarlos en el mismo punto */

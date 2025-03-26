@@ -119,6 +119,8 @@ a {
     right: 0;
     background-color: var(--wine);
     opacity: 0;
+    z-index: 5;
+    /* Esto esta sujeto a modificacion por la flor */
 
 
 
