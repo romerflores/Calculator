@@ -5,6 +5,8 @@ import WineContent from "../themesContent/WineContent"
 import Title from "../title/Title"
 import './flower.css'
 
+import BobEsponja from "../../../public/images/bob_esponja.png"
+
 const rotate = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350]
 
 function Flower() {
@@ -41,7 +43,7 @@ function Flower() {
 
         </div>
         <img 
-            src="../../public/images/bob_esponja.png" 
+            src={BobEsponja}
             alt="Bob esponja" 
             height={"150px"}
             style={{zIndex:"4"}}
