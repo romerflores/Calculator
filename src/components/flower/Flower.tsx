@@ -15,7 +15,7 @@ function Flower() {
     }
 
     return <WineContent color="var(--blue)">
-        <Title textTitle="Feliz dia de flores Luuu 🐮🐸 " textSize="20" textColor="var(--white)"></Title>
+        <Title textTitle="Feliz dia de flores Luuu 🐮🐸 " textSize="20" textColor="var(--white)"/>
         {
             <div className="flor">
                 {
