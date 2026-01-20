@@ -12,7 +12,7 @@ import Home from "./pages/home/Home";
 import Primes from "./pages/primes/Primes";
 import Bits from "./pages/bits/Bits";
 import Aprende from "./pages/aprende/Aprende";
-import TODO from "./components/TODO/TODO";
+// import TODO from "./components/TODO/TODO";
 import Flower from "./components/flower/Flower";
 import Cripto from "./pages/cripto/Cripto";
 
