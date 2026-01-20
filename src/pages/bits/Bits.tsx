@@ -31,7 +31,7 @@ function Bits() {
     return <WineContent>
         <Title
             textTitle="Operaciones con bits"
-            textColor="white"
+            textColor="var(--white)"
             textBorder="green"
             textSize="30"
         />

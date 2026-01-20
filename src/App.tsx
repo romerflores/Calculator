@@ -14,6 +14,7 @@ import Bits from "./pages/bits/Bits";
 import Aprende from "./pages/aprende/Aprende";
 import TODO from "./components/TODO/TODO";
 import Flower from "./components/flower/Flower";
+import Cripto from "./pages/cripto/Cripto";
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
             <Routes>
                 <Route path="/calculadora" element={<Calculator/>} />
                 <Route path="/primos" element={<Primes></Primes>} />
-                <Route path="/criptografia" element={<TODO></TODO>} />
+                <Route path="/criptografia" element={<Cripto/>} />
                 <Route path="/aprende" element={<Aprende></Aprende>} />
                 <Route path="/bits" element={<Bits/>} />
                 <Route path="/luuu" element={<Flower></Flower>} />
